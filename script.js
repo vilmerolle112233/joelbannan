@@ -1,36 +1,84 @@
 const countries = [
+    // Existing countries...
     { country: "United States", capital: "Washington, D.C." },
     { country: "Canada", capital: "Ottawa" },
     { country: "Australia", capital: "Canberra" },
+
+    // New countries
+    { country: "China", capital: "Beijing" },
+    { country: "India", capital: "New Delhi" },
+    { country: "Brazil", capital: "Brasília" },
+    { country: "Russia", capital: "Moscow" },
+    { country: "Japan", capital: "Tokyo" },
+    { country: "Germany", capital: "Berlin" },
+    { country: "France", capital: "Paris" },
+    { country: "United Kingdom", capital: "London" },
+    { country: "Italy", capital: "Rome" },
+    { country: "Spain", capital: "Madrid" },
+    { country: "Mexico", capital: "Mexico City" },
+    { country: "South Africa", capital: "Pretoria" },
+    { country: "Argentina", capital: "Buenos Aires" },
+    { country: "Nigeria", capital: "Abuja" },
+    { country: "Egypt", capital: "Cairo" },
+    { country: "Indonesia", capital: "Jakarta" },
+    { country: "Turkey", capital: "Ankara" },
+    { country: "Iran", capital: "Tehran" },
+    { country: "Saudi Arabia", capital: "Riyadh" },
+    { country: "Pakistan", capital: "Islamabad" },
+    { country: "Bangladesh", capital: "Dhaka" },
+    { country: "Vietnam", capital: "Hanoi" },
+    { country: "Philippines", capital: "Manila" },
+    { country: "Thailand", capital: "Bangkok" },
+    { country: "South Korea", capital: "Seoul" },
+    { country: "North Korea", capital: "Pyongyang" },
+    { country: "Malaysia", capital: "Kuala Lumpur" },
+    { country: "Singapore", capital: "Singapore" },
+    { country: "Taiwan", capital: "Taipei" },
+    { country: "Algeria", capital: "Algiers" },
+    { country: "Morocco", capital: "Rabat" },
+    { country: "Tunisia", capital: "Tunis" },
+    { country: "Libya", capital: "Tripoli" },
+    { country: "Sudan", capital: "Khartoum" },
+    { country: "South Sudan", capital: "Juba" },
+    { country: "Ethiopia", capital: "Addis Ababa" },
+    { country: "Kenya", capital: "Nairobi" },
+    { country: "Tanzania", capital: "Dodoma" },
+    { country: "Uganda", capital: "Kampala" },
+    { country: "Rwanda", capital: "Kigali" },
+    { country: "Burundi", capital: "Bujumbura" },
+    { country: "Democratic Republic of the Congo", capital: "Kinshasa" },
+    { country: "Republic of the Congo", capital: "Brazzaville" },
+    { country: "Angola", capital: "Luanda" },
+    { country: "Zambia", capital: "Lusaka" },
+    { country: "Zimbabwe", capital: "Harare" },
+    { country: "Botswana", capital: "Gaborone" },
+    { country: "Namibia", capital: "Windhoek" },
+    { country: "Malawi", capital: "Lilongwe" },
+    { country: "Mozambique", capital: "Maputo" },
+    { country: "Madagascar", capital: "Antananarivo" },
+    { country: "Comoros", capital: "Moroni" },
+    { country: "Mauritius", capital: "Port Louis" },
+    { country: "Seychelles", capital: "Victoria" },
+    { country: "Ghana", capital: "Accra" },
+    { country: "Nigeria", capital: "Abuja" },
+    { country: "Cameroon", capital: "Yaoundé" },
+    { country: "Gabon", capital: "Libreville" },
+    { country: "Equatorial Guinea", capital: "Malabo" },
+    { country: "Sao Tome and Principe", capital: "São Tomé" },
+    { country: "Central African Republic", capital: "Bangui" },
+    { country: "Chad", capital: "N'Djamena" },
+    { country: "Niger", capital: "Niamey" },
+    { country: "Mali", capital: "Bamako" },
+    { country: "Burkina Faso", capital: "Ouagadougou" },
+    { country: "Togo", capital: "Lomé" },
+    { country: "Benin", capital: "Porto-Novo" },
+    { country: "Côte d'Ivoire", capital: "Yamoussoukro" },
+    { country: "Liberia", capital: "Monrovia" },
+    { country: "Sierra Leone", capital: "Freetown" },
+    { country: "Guinea", capital: "Conakry" },
+    { country: "Guinea-Bissau", capital: "Bissau" },
+    { country: "Senegal", capital: "Dakar" },
+    { country: "The Gambia", capital: "Banjul" },
+    { country: "Mauritania", capital: "Nouakchott" },
     // Add more countries here
 ];
-
-const countryElement = document.getElementById("country");
-const options = document.querySelectorAll("input[name='answer']");
-const submitButton = document.querySelector("button");
-
-function generateQuestion() {
-    const randomIndex = Math.floor(Math.random() * countries.length);
-    const currentCountry = countries[randomIndex];
-    countryElement.textContent = currentCountry.country;
-
-    options.forEach((option, index) => {
-        option.value = index === 0 ? currentCountry.capital : "incorrect";
-        option.nextElementSibling.textContent = index === 0 ? currentCountry.capital : "Incorrect";
-    });
-}
-
-submitButton.addEventListener("click", () => {
-    const selectedOption = document.querySelector("input[name='answer']:checked");
-    if (selectedOption) {
-        if (selectedOption.value   
- === "incorrect") {
-            alert("Incorrect!");
-        } else {
-            alert("Correct!");
-        }
-        generateQuestion();
-    }
-});
-
-generateQuestion();
